@@ -2,7 +2,9 @@
 <ul>
   @for(starship of starshipList.results; track starship.name) {
   <li>
-    <h6>{{ starship.name }}</h6>
+    <a [routerLink]="['/starship', starship.url.split('/').slice(-2, -1)[0]]">
+      {{ starship.name }}
+    </a>
     <p>{{ starship.model }}</p>
   </li>
   }
