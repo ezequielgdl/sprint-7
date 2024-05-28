@@ -1,0 +1,10 @@
+@if(starshipList$ | async; as starshipList) {
+<ul>
+  @for(starship of starshipList.results; track starship.name) {
+  <li>
+    <h6>{{ starship.name }}</h6>
+    <p>{{ starship.model }}</p>
+  </li>
+  }
+</ul>
+}
