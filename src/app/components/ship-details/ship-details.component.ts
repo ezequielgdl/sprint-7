@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 import { Starship } from '../../interfaces/starships';
 import { StarshipsService } from '../../services/starships.service';
 import { CommonModule } from '@angular/common';
@@ -12,12 +12,16 @@ import { CommonModule } from '@angular/common';
   styleUrl: './ship-details.component.css',
 })
 export class ShipDetailsComponent {
+  loading: boolean = false;
   @Input() id!: string;
   starship$!: Observable<Starship>;
 
   constructor(private starshipsService: StarshipsService) {}
 
   ngOnInit(): void {
-    this.starship$ = this.starshipsService.getStarshipById(this.id);
+    this.loading = true;
+    this.starship$ = this.starshipsService
+      .getStarshipById(this.id)
+      .pipe(tap(() => (this.loading = false)));
   }
 }

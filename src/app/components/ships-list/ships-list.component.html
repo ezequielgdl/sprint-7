@@ -1,6 +1,6 @@
-@if(starshipList$ | async; as starshipList) {
+@if(starships) {
 <ul>
-  @for(starship of starshipList.results; track starship.name) {
+  @for(starship of starships; track starship.name) {
   <li>
     <a [routerLink]="['/starship', starship.url.split('/').slice(-2, -1)[0]]">
       {{ starship.name }}
@@ -10,3 +10,5 @@
   }
 </ul>
 }
+<div *ngIf="loading">Loading...</div>
+<button (click)="onViewMore()" *ngIf="!loading && next">View More</button>

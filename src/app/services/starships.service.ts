@@ -9,8 +9,10 @@ import { Starship, StarshipList } from '../interfaces/starships';
 export class StarshipsService {
   constructor(private http: HttpClient) {}
 
-  getStarshipsList(): Observable<StarshipList> {
-    return this.http.get<StarshipList>(`https://swapi.dev/api/starships`);
+  getStarshipsList(page: number = 1): Observable<StarshipList> {
+    return this.http.get<StarshipList>(
+      `https://swapi.dev/api/starships?page=${page}`
+    );
   }
 
   getStarshipById(id: string): Observable<Starship> {
