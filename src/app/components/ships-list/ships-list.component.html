@@ -1,14 +1,16 @@
-@if(starships) {
-<ul>
-  @for(starship of starships; track starship.name) {
-  <li>
-    <a [routerLink]="['/starship', starship.url.split('/').slice(-2, -1)[0]]">
-      {{ starship.name }}
-    </a>
-    <p>{{ starship.model }}</p>
-  </li>
+<div class="flex flex-col items-center m-3">
+  @if(starships) {
+  <ul class="md:w-3/4 w-full">
+    @for(starship of starships; track starship.name) {
+    <li class="m-3 p-6 border-none rounded bg-white/10">
+      <a [routerLink]="['/starship', starship.url.split('/').slice(-2, -1)[0]]">
+        {{ starship.name.toUpperCase() }}
+      </a>
+      <p>{{ starship.model }}</p>
+    </li>
+    }
+  </ul>
   }
-</ul>
-}
-<div *ngIf="loading">Loading...</div>
-<button (click)="onViewMore()" *ngIf="!loading && next">View More</button>
+  <div *ngIf="loading">Loading...</div>
+  <button (click)="onViewMore()" *ngIf="!loading && next">View More</button>
+</div>
