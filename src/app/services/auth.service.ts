@@ -10,7 +10,13 @@ export class AuthService {
   private jwtToken = '';
   isLoggedIn$ = this.loggedIn.asObservable();
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+    const token = localStorage.getItem('jwtToken');
+    if (token) {
+      this.jwtToken = token;
+      this.loggedIn.next(true);
+    }
+  }
 
   login(credentials: any) {
     return this.http.post<any>(`http://localhost:3000/login`, credentials).pipe(
@@ -21,5 +27,19 @@ export class AuthService {
         return true;
       })
     );
+  }
+
+  isLoggedIn(): boolean {
+    return this.loggedIn.getValue();
+  }
+
+  get getJwtToken(): string {
+    return this.jwtToken;
+  }
+
+  logout() {
+    this.jwtToken = '';
+    this.loggedIn.next(false);
+    localStorage.removeItem('jwtToken');
   }
 }
