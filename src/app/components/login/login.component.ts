@@ -8,7 +8,6 @@ import {
 } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
-import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-login',
@@ -36,6 +35,7 @@ export class LoginComponent {
 
   login() {
     if (this.loginForm.invalid) {
+      this.errorMessage = 'Please fill in username and password';
       return;
     }
 
