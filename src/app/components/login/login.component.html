@@ -3,6 +3,7 @@
   [formGroup]="loginForm"
   (ngSubmit)="login()"
 >
+  <h2>LOGIN</h2>
   <div class="form-group w-full flex flex-col items-start space-y-2">
     <label for="email" class="text-left w-full">Email:</label>
     <input
@@ -29,6 +30,10 @@
   >
     Login
   </button>
+  <div>
+    If you're not registered, please
+    <a class="underline" [routerLink]="['/register']">register here</a>
+  </div>
   @if (errorMessage) {
   <div>
     <span class="text-danger">{{ errorMessage }}</span>

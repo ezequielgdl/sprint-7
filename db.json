@@ -1,9 +1,10 @@
 {
   "users": [
     {
-      "email": "john@gmail.com",
-      "password": "$2a$10$XSioS1Mh9vcyV1YcxOrOrugrDVyT5.80RYWZKis.RT/jpEIjiYQB.",
-      "id": "Z8eYOLG"
+      "email": "ezequielgdl@gmail.com",
+      "password": "$2a$10$XowPwM2JexAV.cIjdWQzu.oB3OZhFVgauAuELT3rLQD2lV.UiJurm",
+      "username": "Eze",
+      "id": 1
     }
   ]
 }

@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { LoginComponent } from '../login/login.component';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -8,4 +9,11 @@ import { LoginComponent } from '../login/login.component';
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
-export class HomeComponent {}
+export class HomeComponent {
+  authService = inject(AuthService);
+  username = '';
+
+  ngOnInit() {
+    this.username = this.authService.getUsername;
+  }
+}
