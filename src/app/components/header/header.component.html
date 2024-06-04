@@ -1,17 +1,34 @@
-<div class="flex justify-around items-center my-6">
-  <div>Social Links</div>
-  <img
-    src="/assets/star-wars-logo.png"
-    alt="Star Wars Logo"
-    class="w-48 cursor-pointer"
-    [routerLink]="['']"
-  />
+<div class="flex items-center my-6">
+  <div class="space-x-4 w-1/3 text-center">
+    <a href="https://facebook.com/starwars" target="_blank"
+      ><i class="bi bi-facebook"></i
+    ></a>
+    <a href="https://twitter.com/starwars" target="_blank"
+      ><i class="bi bi-twitter"></i
+    ></a>
+    <a href="https://youtube.com/starwars" target="_blank"
+      ><i class="bi bi-youtube"></i
+    ></a>
+    <a href="https://instagram.com/starwars" target="_blank"
+      ><i class="bi bi-instagram"></i
+    ></a>
+  </div>
+  <div class="w-1/3 flex justify-center">
+    <img
+      src="/assets/star-wars-logo.png"
+      alt="Star Wars Logo"
+      class="w-48 cursor-pointer"
+      [routerLink]="['']"
+    />
+  </div>
   @if (!(isLoggedIn$ | async)){
-  <div>
+  <div class="w-1/3 text-center">
     <a [routerLink]="['login']">LOGIN</a>
     <a class="ml-6" [routerLink]="['register']">REGISTER</a>
   </div>
   } @if (isLoggedIn$ | async) {
-  <div><button (click)="logout()">LOG OUT</button></div>
+  <div class="w-1/3 text-center">
+    <button (click)="logout()">LOG OUT</button>
+  </div>
   }
 </div>
