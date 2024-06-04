@@ -2,10 +2,13 @@
   @if(starships) {
   <ul class="md:w-3/4 w-full">
     @for(starship of starships; track starship.name) {
-    <li class="m-3 p-6 border-none rounded bg-white/10">
-      <a [routerLink]="['/starship', starship.url.split('/').slice(-2, -1)[0]]">
+    <li
+      [routerLink]="['/starship', starship.url.split('/').slice(-2, -1)[0]]"
+      class="m-3 p-6 border-none rounded bg-white/10 cursor-pointer"
+    >
+      <h6>
         {{ starship.name.toUpperCase() }}
-      </a>
+      </h6>
       <p>{{ starship.model }}</p>
     </li>
     }
