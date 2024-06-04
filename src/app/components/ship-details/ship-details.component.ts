@@ -5,11 +5,12 @@ import { StarshipsService } from '../../services/starships.service';
 import { CommonModule } from '@angular/common';
 import { PilotsComponent } from '../pilots/pilots.component';
 import { FilmsComponent } from '../films/films.component';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-ship-details',
   standalone: true,
-  imports: [CommonModule, PilotsComponent, FilmsComponent],
+  imports: [CommonModule, PilotsComponent, FilmsComponent, RouterLink],
   templateUrl: './ship-details.component.html',
   styleUrl: './ship-details.component.css',
 })

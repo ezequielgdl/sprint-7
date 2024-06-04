@@ -16,6 +16,11 @@
     </p>
     <p><strong>Crew:</strong> {{ starship.crew }}</p>
   </div>
+  } @else {
+  <div class="m-5">
+    This starship doesn't exist or there has been an error. Go back to
+    <a class="underline" [routerLink]="['/starships']">starships</a>
+  </div>
   }
 </div>
 @if(starship$ | async; as starship) {

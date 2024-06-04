@@ -13,6 +13,8 @@
     </li>
     }
   </ul>
+  } @else {
+  <div>There was an error loading the starships.</div>
   }
   <div *ngIf="loading">Loading...</div>
   <button (click)="onViewMore()" *ngIf="!loading && next">View More</button>
