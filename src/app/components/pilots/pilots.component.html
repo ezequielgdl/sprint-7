@@ -1,1 +1,17 @@
-<p>pilots works!</p>
+<h1 class="border-y-2 mx-6 py-3 mt-12">PILOTS</h1>
+<div
+  class="flex flex-col items-center m-5 space-y-4 sm:space-y-0 sm:flex-row sm:space-x-4"
+>
+  @if (pilotsData$ | async; as pilots) { @for (pilot of pilots; track $index) {
+  <div class="border-2 rounded">
+    <img class="" [src]="getPicture(pilot.url)" alt="{{ pilot.name }} photo" />
+    <div
+      class="bg-gray-500/30 text-center py-2 border-t-2 border-t-orange-400/65"
+    >
+      {{ pilot.name }}
+    </div>
+  </div>
+  }} @else {
+  <p>No Pilots Available.</p>
+  }
+</div>

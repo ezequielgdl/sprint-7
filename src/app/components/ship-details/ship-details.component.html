@@ -18,3 +18,8 @@
   </div>
   }
 </div>
+@if(starship$ | async; as starship) {
+<app-pilots [pilots]="starship.pilots"></app-pilots>
+<app-films [films]="starship.films"></app-films>
+
+}

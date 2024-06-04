@@ -1,1 +1,17 @@
-<p>films works!</p>
+<h1 class="border-y-2 mx-6 py-3 mt-12">PILOTS</h1>
+<div
+  class="flex flex-col items-center m-5 space-y-4 sm:space-y-0 sm:flex-row sm:space-x-4"
+>
+  @if (filmsData$ | async; as films) { @for (film of films; track $index) {
+  <div class="border-2 rounded">
+    <img class="" [src]="getPicture(film.url)" alt="{{ film.title }} photo" />
+    <div
+      class="bg-gray-500/30 text-center py-2 border-t-2 border-t-orange-400/65"
+    >
+      {{ film.title }}
+    </div>
+  </div>
+  }} @else {
+  <p>No Films Available.</p>
+  }
+</div>

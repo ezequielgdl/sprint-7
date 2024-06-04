@@ -3,11 +3,13 @@ import { Observable, tap } from 'rxjs';
 import { Starship } from '../../interfaces/starships';
 import { StarshipsService } from '../../services/starships.service';
 import { CommonModule } from '@angular/common';
+import { PilotsComponent } from '../pilots/pilots.component';
+import { FilmsComponent } from '../films/films.component';
 
 @Component({
   selector: 'app-ship-details',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, PilotsComponent, FilmsComponent],
   templateUrl: './ship-details.component.html',
   styleUrl: './ship-details.component.css',
 })
