@@ -5,6 +5,12 @@
       "password": "$2a$10$XowPwM2JexAV.cIjdWQzu.oB3OZhFVgauAuELT3rLQD2lV.UiJurm",
       "username": "Eze",
       "id": 1
+    },
+    {
+      "email": "test@test.com",
+      "password": "$2a$10$6CacU4cXKNm0s5wDWZs3vO7y9mkea9kXMfj9QNCkyRvb1sLDYmaSa",
+      "username": "Test",
+      "id": 2
     }
   ]
 }

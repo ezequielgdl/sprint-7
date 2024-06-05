@@ -1,6 +1,39 @@
-# Sprint7
+# Sprint7 - Star Wars
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.7.
+# Angular 17 with json-server & Authentication (json-server-auth) and TailwindCSS
+
+This project is a Star Wars database for starships using Angular 17.3.7 that leverages json-server for a mock backend API with authentication using json-server-auth and TailwindCSS for utility-first styling.
+
+## Prerequisites
+
+Make sure you have the following software installed:
+
+- [Node.js](https://nodejs.org/) (version 16 or higher)
+- [Angular CLI](https://angular.io/cli) (version 17)
+- [Git](https://git-scm.com/)
+
+## Getting Started
+
+1. **Clone the Repository:**
+
+   ```bash
+   git clone https://github.com/ezequielgdl/sprint-7.git
+   ```
+
+2. **Install Dependencies**
+
+```bash
+npm install
+```
+
+3. **Run the json-server-auth backend API**
+
+The json-server-auth is the mock API backend that holds the user authentication info.
+You can register a new user or use test@test.com with password: 1234 to log in.
+
+```bash
+npx json-server-auth db.json
+```
 
 ## Development server
 
@@ -22,6 +55,8 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## Further help
+## Technologies Used
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- Angular
+- TailwindCSS
+- JSON-Server with JSON-SERVER-AUTH
