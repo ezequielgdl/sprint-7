@@ -1,12 +1,12 @@
 <h1 class="border-y-2 mx-6 py-3 mt-12">STARSHIPS</h1>
-<div class="flex justify-center md:justify-end">
-  <img />
+<div class="flex flex-col md:justify-end lg:flex-row">
   @if(starship$ | async; as starship) {
+  <img class="m-5" [src]="starshipImageUrl" alt="{{ starship.name }} photo" />
   <div
-    class="bg-white/10 m-6 space-y-3 p-6 border-l-2 border-l-orange-400/65 w-full md:w-1/2"
+    class="bg-white/10 m-6 space-y-3 p-6 border-l-2 border-l-orange-400/65 w-full lg:w-1/2"
   >
     <h1 class="text-xl font-extrabold">{{ starship.name.toUpperCase() }}</h1>
-    <p><strong>Model:</strong> {{ starship.model }}</p>
+    <p><strong>Model:</strong>{{ starship.model }}</p>
     <p><strong>Manufacturer:</strong> {{ starship.manufacturer }}</p>
     <p><strong>Cost in Credits:</strong> {{ starship.cost_in_credits }}</p>
     <p><strong>Length:</strong> {{ starship.length }}</p>

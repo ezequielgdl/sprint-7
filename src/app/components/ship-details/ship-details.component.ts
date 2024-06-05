@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
-import { Observable, tap } from 'rxjs';
+import { Component, Input, OnInit } from '@angular/core';
+import { Observable, of } from 'rxjs';
+import { catchError, map, tap } from 'rxjs/operators';
 import { Starship } from '../../interfaces/starships';
 import { StarshipsService } from '../../services/starships.service';
 import { CommonModule } from '@angular/common';
@@ -14,17 +15,42 @@ import { RouterLink } from '@angular/router';
   templateUrl: './ship-details.component.html',
   styleUrl: './ship-details.component.css',
 })
-export class ShipDetailsComponent {
+export class ShipDetailsComponent implements OnInit {
   loading: boolean = false;
   @Input() id!: string;
   starship$!: Observable<Starship>;
+  starshipImageUrl: string = '';
 
   constructor(private starshipsService: StarshipsService) {}
 
   ngOnInit(): void {
     this.loading = true;
-    this.starship$ = this.starshipsService
-      .getStarshipById(this.id)
-      .pipe(tap(() => (this.loading = false)));
+    this.starship$ = this.starshipsService.getStarshipById(this.id).pipe(
+      tap(() => (this.loading = false)),
+      map((starship) => {
+        this.loadStarshipImage(starship.url);
+        return starship;
+      })
+    );
+  }
+
+  getPicture(url: string): string {
+    const id = url.split('/')[5];
+    return `https://starwars-visualguide.com/assets/img/starships/${id}.jpg`;
+  }
+
+  loadStarshipImage(url: string): void {
+    const imageUrl = this.getPicture(url);
+
+    const img = new Image();
+    img.src = imageUrl;
+
+    img.onload = () => {
+      this.starshipImageUrl = imageUrl;
+    };
+
+    img.onerror = () => {
+      this.starshipImageUrl = 'assets/big-placeholder.jpeg'; // Set a placeholder image
+    };
   }
 }

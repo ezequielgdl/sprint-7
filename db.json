@@ -11,6 +11,12 @@
       "password": "$2a$10$6CacU4cXKNm0s5wDWZs3vO7y9mkea9kXMfj9QNCkyRvb1sLDYmaSa",
       "username": "Test",
       "id": 2
+    },
+    {
+      "email": "juan@gmail.com",
+      "password": "$2a$10$fc.iaOKOFvp2fOZKczmQe.F.Qcb/rBi6pCf1pH7RjMnB4.iux.x9a",
+      "username": "Juan",
+      "id": 3
     }
   ]
 }
