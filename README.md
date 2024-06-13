@@ -1,15 +1,15 @@
 # Sprint7 - Star Wars
 
-# Angular 17 with json-server & Authentication (json-server-auth) and TailwindCSS
+# Angular 18 with json-server & Authentication (json-server-auth) and TailwindCSS
 
-This project is a Star Wars database for starships using Angular 17.3.7 that leverages json-server for a mock backend API with authentication using json-server-auth and TailwindCSS for utility-first styling.
+This project is a Star Wars database for starships using Angular 18 that leverages json-server for a mock backend API with authentication using json-server-auth and TailwindCSS for utility-first styling.
 
 ## Prerequisites
 
 Make sure you have the following software installed:
 
 - [Node.js](https://nodejs.org/) (version 16 or higher)
-- [Angular CLI](https://angular.io/cli) (version 17)
+- [Angular CLI](https://angular.io/cli) (version 18)
 - [Git](https://git-scm.com/)
 
 ## Getting Started
@@ -57,6 +57,6 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 
 ## Technologies Used
 
-- Angular
+- Angular 18
 - TailwindCSS
 - JSON-Server with JSON-SERVER-AUTH
