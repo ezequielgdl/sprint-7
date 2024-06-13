@@ -3,8 +3,8 @@ import { ShipsListComponent } from './ships-list.component';
 import { StarshipsService } from '../../services/starships.service';
 import { of, throwError } from 'rxjs';
 import { CommonModule } from '@angular/common';
-import { RouterTestingModule } from '@angular/router/testing';
 import { StarshipList } from '../../interfaces/starships';
+import { RouterModule } from '@angular/router';
 
 describe('ShipsListComponent', () => {
   let component: ShipsListComponent;
@@ -18,7 +18,7 @@ describe('ShipsListComponent', () => {
     ]);
 
     TestBed.configureTestingModule({
-      imports: [CommonModule, RouterTestingModule],
+      imports: [CommonModule, RouterModule],
       providers: [{ provide: StarshipsService, useValue: starshipsServiceSpy }],
     }).compileComponents();
 
